@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Detect environment
   const ENVIRONMENT = window.location.hostname === "localhost" ? "development" : "production";
-  const BACKEND_URL = "http://localhost:5000/v1"; // Force localhost for now
+  const BACKEND_URL = "https://bloomix-api.onrender.com/v1"; // Force localhost for now
+  // const BACKEND_URL = "https://bloomix-frontend-test.onrender.com/v1"; // Force localhost for now
+  // const BACKEND_URL = "http://localhost:5000/v1"; // Force localhost for now
   
   console.log("Popup Environment:", ENVIRONMENT);
   console.log("Popup Backend URL:", BACKEND_URL);
