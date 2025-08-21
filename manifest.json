@@ -1,0 +1,96 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Auto Extractor",
+  "version": "1.0",
+  "description": "Automatically extracts LinkedIn profile information and sends it to backend server.",
+  "permissions": [
+    "activeTab",
+    "scripting", 
+    "storage",
+    "tabs",
+    "background",
+    "windows"
+  ],
+  "host_permissions": [
+    "https://www.linkedin.com/*",
+    "https://*.linkedin.com/*",
+    "http://localhost:*/*",
+    "https://*.onrender.com/*",
+    "https://bloomix-frontend-test.onrender.com/*",
+    "https://bloomix-api.onrender.com/*",
+    "https://*.netlify.app/*",
+    "https://bloomix.netlify.app/*",
+    "https://bloomix3.netlify.app/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.linkedin.com/in/*", 
+        "https://*.linkedin.com/in/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "http://localhost:*/*",
+        "https://bloomix-frontend-test.onrender.com/*",
+        "https://bloomix-api.onrender.com/*",
+        "https://bloomix.netlify.app/*",
+        "https://bloomix3.netlify.app/*",
+        "https://*.netlify.app/*"
+      ],
+      "js": ["app_connector.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "LinkedIn Auto Extractor",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png", 
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["content.js", "app_connector.js"],
+      "matches": [
+        "https://www.linkedin.com/*",
+        "https://*.linkedin.com/*",
+        "http://localhost:*/*",
+        "https://bloomix-frontend-test.onrender.com/*",
+        "https://bloomix-api.onrender.com/*",
+        "https://bloomix.netlify.app/*",
+        "https://bloomix3.netlify.app/*",
+        "https://*.netlify.app/*",
+        "https://*.onrender.com/*"
+      ]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://www.linkedin.com https://*.linkedin.com https://api.linkedin.com http://localhost:* https://*.onrender.com https://*.netlify.app;"
+  },
+  "externally_connectable": {
+    "matches": [
+      "http://localhost:*/*",
+      "https://bloomix-frontend-test.onrender.com/*",
+      "https://bloomix-api.onrender.com/*",
+      "https://bloomix.netlify.app/*",
+      "https://bloomix3.netlify.app/*",
+      "https://*.netlify.app/*"
+    ]
+  }
+}

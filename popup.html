@@ -1,0 +1,185 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 300px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .status {
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .status.active {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .status.inactive {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .primary {
+      background-color: #007bff;
+      color: white;
+    }
+    .primary:hover {
+      background-color: #0056b3;
+    }
+    .secondary {
+      background-color: #6c757d;
+      color: white;
+    }
+    .secondary:hover {
+      background-color: #545b62;
+    }
+    .danger {
+      background-color: #dc3545;
+      color: white;
+    }
+    .danger:hover {
+      background-color: #c82333;
+    }
+    .search-list {
+      max-height: 150px;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+      margin-top: 10px;
+    }
+    .search-item {
+      padding: 5px;
+      border-bottom: 1px solid #eee;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h3>LinkedIn Auto Extractor</h3>
+  </div>
+  
+  <div id="status" class="status inactive">
+    Extension Ready
+  </div>
+  
+  <button id="extractButton" class="primary">Extract Current Page</button>
+  <button id="testConnection" class="secondary">Test Backend Connection</button>
+  
+  <div id="activeSearches">
+    <h4>Active Searches:</h4>
+    <div id="searchList" class="search-list">
+      No active searches
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        width: 300px;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .status {
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+      .status.active {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+      .status.inactive {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      .primary {
+        background-color: #007bff;
+        color: white;
+      }
+      .primary:hover {
+        background-color: #0056b3;
+      }
+      .secondary {
+        background-color: #6c757d;
+        color: white;
+      }
+      .secondary:hover {
+        background-color: #545b62;
+      }
+      .danger {
+        background-color: #dc3545;
+        color: white;
+      }
+      .danger:hover {
+        background-color: #c82333;
+      }
+      .search-list {
+        max-height: 150px;
+        overflow-y: auto;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      .search-item {
+        padding: 5px;
+        border-bottom: 1px solid #eee;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header"><h3>LinkedIn Auto Extractor</h3></div>
+    <div id="status" class="status inactive">Extension Ready</div>
+    <button id="extractButton" class="primary">Extract Current Page</button>
+    <button id="testConnection" class="secondary">
+      Test Backend Connection
+    </button>
+    <div id="activeSearches">
+      <h4>Active Searches:</h4>
+      <div id="searchList" class="search-list">No active searches</div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
